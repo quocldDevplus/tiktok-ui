@@ -13,7 +13,7 @@ import {
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
-import Search from '../search';
+import Search from '../Search';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -129,17 +129,17 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1666252800&x-signature=Kct2hPx36b4OynZg0NPvH8qqApw%3D"
+                                src={images.avt}
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
                                 fallback="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/e6259617f1e697297b90d67a43df8d98.jpeg?x-expires=1666602000&x-signature=RaooEXyN7BkcTixqHnk1Ud1rNpM%3D"
                             />
                         ) : (
-                            <>
+                            <div>
                                 <button className={cx('more-btn')}>
                                     <FontAwesomeIcon icon={faEllipsisVertical} />
                                 </button>
-                            </>
+                            </div>
                         )}
                     </Menu>
                 </div>
